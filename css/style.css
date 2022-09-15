@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+/* --------DOM------ */
+#contenedorDeStickers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 18rem!important
+}
+
+/* --------FIN DOM------ */
+.contenido {
+    display: flex;
+}
+
+
+.contenidoDos {
+    display: flex;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.header h1 {
+    background: rgb(250, 251, 15);
+    background: linear-gradient(90deg, rgba(250, 251, 15, 1) 0%, rgba(159, 141, 3, 1) 33%, rgba(179, 129, 2, 1) 49%, rgba(255, 67, 0, 1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.logo {
+    height: 87px;
+    width: 304px;
+}
