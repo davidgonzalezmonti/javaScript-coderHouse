@@ -18,46 +18,123 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <!-- Awesone Icons -->
+
+    <script
+      src="https://kit.fontawesome.com/7f45f6fef1.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
 
   <body>
-    <!-- cabezera -->
+    <div class="fondoBody">
+      <!-- cabezera -->
 
-    <header class="header">
-      <img class="logo" src="./img/anime.png" alt="logo" />
-      <h1>STICKERS</h1>
-    </header>
+      <header class="header">
+        <img class="logo" src="./img/anime.png" alt="logo" />
+        <h1>STICKERS</h1>
+      </header>
 
-    <!-- BUSCADOR -->
+      <div class="buscadorCarrito">
+        <!--- CARRITO DE COMPRAS --->
 
-    <nav class="navbar bg-light">
-      <div class="container-fluid justify-content-center">
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+        <!-- ----------------- -->
+        <div class="text-center">
+          <button
+            type="button "
+            class="btn btn-primary text-center"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            IR A CARRITO DE COMPRAS
+          </button>
+        </div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  CARRITO DE COMPRAS
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <!-- ----------------------------- -->
+              <table class="table table-hover table-success table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Tamaño</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
+                    <td></td>
+                  </tr>
+                </thead>
+                <tbody id="tablaCarrito"></tbody>
+                <tbody>
+                  <tr>
+                    <td colspan="3"></td>
+                    <td><b>TOTAL</b></td>
+                    <td id="precioTotal">$</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- ----------------------------- -->
+
+              <div class="modal-body"></div>
+              <div class="modal-footer">
+                <button id="vaciarCarrito" type="button" class="btn btn-danger">
+                  VACIAR CARRITO
+                </button>
+                <button type="button" id="botonComprar" class="btn btn-success">
+                  COMPRAR
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUSCADOR -->
+
+        <nav class="navbar">
+          <div class="container-fluid justify-content-center">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar por Anime"
+                aria-label="Search"
+              />
+              <button class="btn btn-primary" id="buscador">Buscar</button>
+            </form>
+          </div>
+        </nav>
       </div>
-    </nav>
 
-    <!-- MAIN -->
+      <!-- --------------------- -->
 
-    <div class="row justify-content-center"></div>
+      <!-- MAIN -->
 
-    <!--- CARRITO DE COMPRAS --->
-    <div id="carritoDeCompras">
-      <table class="table table-dark table-hover">
-        <tbody class="tbody"></tbody>
-      </table>
+      <div id="contenedorStickers" class="row justify-content-center"></div>
     </div>
-
     <!-- boostrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -70,3 +147,10 @@
     <script src="./js/index.js"></script>
   </body>
 </html>
+
+<!-- <section class="estilo-carrito">
+  <h2>CARRITO DE COMPRAS</h2>
+  <div id="contenedorCarrito"></div>
+  <p>PRECIO TOTAL: $<span id="precioTotal">0</span></p>
+  <button id="vaciarCarrito">VACIAR CARRITO</button>
+</section> -->
