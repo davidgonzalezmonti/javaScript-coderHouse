@@ -12,7 +12,9 @@ const stockStickers = [
 
 ];
 
+
 let carrito = []
+
 
 const contenedorDeStickers = document.getElementById("contenedorStickers")
 const tablaCarrito = document.getElementById("tablaCarrito")
@@ -25,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     visualizarCarrito()
   }
 })
+
 
 stockStickers.forEach(sticker => {
   const divSticker = document.createElement("div");
@@ -56,6 +59,7 @@ stockStickers.forEach(sticker => {
 
 })
 
+
 const agregarAlCarrito = (stickerId) => {
   const existe = carrito.some(prod => prod.id === stickerId)
 
@@ -72,11 +76,13 @@ const agregarAlCarrito = (stickerId) => {
   visualizarCarrito()
 }
 
+
 const eliminarDelCarrito = (stickerId) => {
   const sticker = carrito.find((prod) => prod.id === stickerId)
   const indice = carrito.indexOf(sticker)
   if (sticker.cantidad === 1) {
     carrito.splice(indice, 1)
+    localStorage.removeItem("carrito");
   } else {
     sticker.cantidad--
   }
@@ -84,13 +90,14 @@ const eliminarDelCarrito = (stickerId) => {
 
 }
 
+
 vaciarCarrito.addEventListener("click", () => {
   carrito.length = 0
+  localStorage.removeItem("carrito");
   visualizarCarrito()
 })
 
 
-//* Genero un carrito con su estructura HTML
 const visualizarCarrito = () => {
   tablaCarrito.innerHTML = ""
   carrito.forEach((sticker) => {
@@ -141,6 +148,7 @@ formBuscador.addEventListener("submit", (e) => {
 
   formBuscador.reset()
 })
+
 
 const filtradoPorAnime = (opcionesBusqueda) => {
   contenedorDeStickers.innerHTML = ""
