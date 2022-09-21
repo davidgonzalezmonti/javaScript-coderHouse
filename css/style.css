@@ -7,6 +7,34 @@
 
 .diseñoCard{
     box-shadow: 1px 0px 20px 10px #00000099;
+    transition: all 1.3s ease;
+}
+
+.diseñoCard:hover{
+    transform: scale(1.05);
+            filter: drop-shadow(0px 0px 10px black);
+}
+
+.sectionDiseño{
+    padding: 40px;
+}
+
+.boton-carrito-diseño{
+    transition: all 1.02s ease;
+}
+
+.boton-carrito-diseño:hover{
+    /* transform: scale(1.05); */
+    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
+}
+
+.boton-buscar-diseño{
+    transition: all 1.02s ease;
+    
+}
+
+.boton-buscar-diseño:hover{
+    filter: drop-shadow(0px 0px 5px rgb(255, 255, 255));
 }
 
 .buscadorCarrito{

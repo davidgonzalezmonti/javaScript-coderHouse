@@ -18,16 +18,10 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <!-- Awesone Icons -->
-
-    <script
-      src="https://kit.fontawesome.com/7f45f6fef1.js"
-      crossorigin="anonymous"
-    ></script>
-
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Document</title>
+
+    <title>Stickers Anime</title>
   </head>
 
   <body>
@@ -42,11 +36,10 @@
       <div class="buscadorCarrito">
         <!--- CARRITO DE COMPRAS --->
 
-        <!-- ----------------- -->
         <div class="text-center">
           <button
             type="button "
-            class="btn btn-primary text-center"
+            class="btn btn-primary text-center boton-carrito-diseño"
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
@@ -75,7 +68,7 @@
                 ></button>
               </div>
               <!-- ----------------------------- -->
-              <table class="table table-hover table-success table-striped">
+              <table class="table table table-striped table-hover">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -90,7 +83,7 @@
                 <tbody>
                   <tr>
                     <td colspan="3"></td>
-                    <td><b>TOTAL</b></td>
+                    <td><b>TOTAL:</b></td>
                     <td id="precioTotal">$</td>
                     <td></td>
                   </tr>
@@ -116,24 +109,37 @@
 
         <nav class="navbar">
           <div class="container-fluid justify-content-center">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar por Anime"
-                aria-label="Search"
-              />
-              <button class="btn btn-primary" id="buscador">Buscar</button>
+            <form class="d-flex" id="formBuscador" role="search">
+              <select
+                id="opcionesBusqueda"
+                class="form-select m-1"
+                aria-label="Default select example"
+              >
+                <option selected>Buscar por anime</option>
+                <option id="onePiece">One Piece</option>
+                <option id="dragonBallZ">Dragon Ball Z</option>
+                <option id="kimetsuNoYaiba">Kimetsu no Yaiba</option>
+                <option id="todosLosAnime">TODOS</option>
+              </select>
+              <button
+                class="btn btn-primary m-1 boton-buscar-diseño"
+                type="submit"
+              >
+                Buscar
+              </button>
             </form>
           </div>
         </nav>
       </div>
 
       <!-- --------------------- -->
-
+      <div id="contenedorDeFiltros"></div>
       <!-- MAIN -->
-
-      <div id="contenedorStickers" class="row justify-content-center"></div>
+      <section></section>
+      <section
+        id="contenedorStickers"
+        class="row justify-content-center sectionDiseño"
+      ></section>
     </div>
     <!-- boostrap -->
     <script
