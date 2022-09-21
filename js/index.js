@@ -1,4 +1,3 @@
-//TODO STOCK DE STICKERS
 const stockStickers = [
 
   { id: 1, cantidad: 1, nombre: "Mugiwara", tamaño: "10x10", precio: 200, imagen: "./img/mugiwara.jpg", anime: "One Piece" },
@@ -13,19 +12,12 @@ const stockStickers = [
 
 ];
 
-//! FIN DE STOCK
-
-//* VARIABLE GLOBAL
 let carrito = []
 
-
-//* ID llamados desde el HTML
 const contenedorDeStickers = document.getElementById("contenedorStickers")
 const tablaCarrito = document.getElementById("tablaCarrito")
 const vaciarCarrito = document.getElementById("vaciarCarrito")
 const formBuscador = document.getElementById("formBuscador")
-
-//* LocalStorage
 
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("carrito")) {
@@ -34,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 })
 
-//* Insertamos el stock en el HTML 
 stockStickers.forEach(sticker => {
   const divSticker = document.createElement("div");
   divSticker.classList.add("card", "m-4", "p-3", "mb-5", "bg-body", "rounded", "diseñoCard");
@@ -65,8 +56,6 @@ stockStickers.forEach(sticker => {
 
 })
 
-
-//* Funcion para agregar cada producto al carrito
 const agregarAlCarrito = (stickerId) => {
   const existe = carrito.some(prod => prod.id === stickerId)
 
@@ -83,8 +72,6 @@ const agregarAlCarrito = (stickerId) => {
   visualizarCarrito()
 }
 
-
-//* Eliminar productos del carrito
 const eliminarDelCarrito = (stickerId) => {
   const sticker = carrito.find((prod) => prod.id === stickerId)
   const indice = carrito.indexOf(sticker)
@@ -97,8 +84,6 @@ const eliminarDelCarrito = (stickerId) => {
 
 }
 
-
-//* Funcion boton vaciar carrito
 vaciarCarrito.addEventListener("click", () => {
   carrito.length = 0
   visualizarCarrito()
@@ -148,9 +133,6 @@ botonComprar.addEventListener("click", () => {
 })
 
 
-//TODO: CREO UN BUSCADOR PARA PODER FILTRAR POR ANIME
-
-//* Creo la funcionalidad del boton y sus filtros
 formBuscador.addEventListener("submit", (e) => {
   e.preventDefault();
   let opcionesBusquedaUI = document.getElementById("opcionesBusqueda").value;
@@ -160,7 +142,6 @@ formBuscador.addEventListener("submit", (e) => {
   formBuscador.reset()
 })
 
-//* Estructura HTML del filtrado
 const filtradoPorAnime = (opcionesBusqueda) => {
   contenedorDeStickers.innerHTML = ""
 let stockStickerFiltrado;
