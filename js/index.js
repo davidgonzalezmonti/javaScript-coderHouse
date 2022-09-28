@@ -41,8 +41,6 @@ vaciarCarrito.addEventListener("click", () => {
   visualizarCarrito();
 });
 
-botonMsjComprar.addEventListener("click", () => {alert("GRACIAS POR SU COMPRA");});
-
 const filtradoPorAnime = (opcionesBusqueda) => {
   contenedorDeStickers.innerHTML = "";
   stockStickers.find((sticker) => sticker.anime === opcionesBusqueda) !== undefined ? (stockStickerFiltrado = stockStickers.filter((sticker) => sticker.anime === opcionesBusqueda)) : (stockStickerFiltrado = stockStickers);
@@ -74,9 +72,7 @@ function insertarStock(sticker) {
 const agregarAlCarrito = (stickerId) => {
   const existe = carrito.some((producto) => producto.id === stickerId);
   if (existe) {
-    const sticker = carrito.map((producto) => {
-      producto.id === stickerId && prod.cantidad++;
-    });
+    const sticker = carrito.map((producto) => {producto.id === stickerId && producto.cantidad++});
   } else {
     const sticker = stockStickers.find((producto) => producto.id === stickerId);
     carrito.push(sticker);
