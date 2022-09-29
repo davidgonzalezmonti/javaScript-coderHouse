@@ -30,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
 formBuscador.addEventListener("submit", (e) => {
   e.preventDefault();
   let opcionesBusquedaUI = document.getElementById("opcionesBusqueda").value;
-  console.log(opcionesBusquedaUI);
   filtradoPorAnime(opcionesBusquedaUI);
   formBuscador.reset();
 });
@@ -39,7 +38,31 @@ vaciarCarrito.addEventListener("click", () => {
   carrito.length = 0;
   localStorage.removeItem("carrito");
   visualizarCarrito();
+  Swal.fire({
+    title: 'Desea vaciar el carrito?',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Sí, vaciar el carrito!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Carrito vacio',
+        'Has vaciado el carrito',
+        'success'
+      )
+    }
+  })
 });
+
+botonMsjComprar.addEventListener("click", () => {
+  carrito == 0 ? Swal.fire({position: 'center', icon: 'error', title: '¡Upss! Su carrito esta vacio.', showConfirmButton: false, timer: 1500}) : 
+  Swal.fire({position: 'center', icon: 'success', title: '¡Compra realizada con exito!', showConfirmButton: false, timer: 1500})
+  carrito.length = 0;
+  localStorage.removeItem("carrito");
+  visualizarCarrito();
+})
 
 const filtradoPorAnime = (opcionesBusqueda) => {
   contenedorDeStickers.innerHTML = "";
@@ -105,6 +128,7 @@ const visualizarCarrito = () => {
 tablaCarrito.appendChild(trVisualizarCarrito);
 localStorage.setItem("carrito", JSON.stringify(carrito));
   });
+
   totalCarrito();
 };
 
