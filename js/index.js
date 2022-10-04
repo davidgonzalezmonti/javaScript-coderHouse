@@ -6,9 +6,8 @@ const vaciarCarrito = document.getElementById("vaciarCarrito");
 const formBuscador = document.getElementById("formBuscador");
 const botonMsjComprar = document.getElementById("botonComprar");
 
-//--------------------------------------------------------------------------------------------------------------------------------------------
  
-fetch ("/stockStickers.json")
+fetch ("./stockStickers.json")
 .then((respuesta) => respuesta.json())
 .then ((stockStickers => dataStickers(stockStickers)))
 
@@ -39,7 +38,7 @@ formBuscador.addEventListener("submit", (e) => {
     }
     visualizarCarrito();
   };
-
+  
   function insertarStock(sticker) {
     const divSticker = document.createElement("div");
     divSticker.classList.add("card","m-4","p-3","mb-5","bg-body","rounded","diseñoCard");
@@ -53,7 +52,7 @@ formBuscador.addEventListener("submit", (e) => {
           Tamaño: ${sticker.tamaño}<br />
           Anime: ${sticker.anime}
         </p>
-        <button href="#" id="agregar${sticker.id}" class="btn btn-primary">Agregar al carrito</button>
+        <button "href="#" id="agregar${sticker.id}" class="btn btn-primary">Agregar al carrito</button>
      </div>`;
   
     contenedorDeStickers.appendChild(divSticker);
